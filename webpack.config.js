@@ -13,7 +13,6 @@ fs.readdirSync('node_modules')
   });
 
 module.exports = (env) => {
-
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('styles.css');
   return {
@@ -48,11 +47,14 @@ module.exports = (env) => {
       }]
     },
     plugins: [CSSExtract],
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       historyApiFallback: true,
       contentBase: path.join(__dirname, 'public'),
-      publicPath: '/dist/',
+      publicPath: '/',
       port: 4172
     }
   }
