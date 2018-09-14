@@ -13,15 +13,12 @@ fs.readdirSync('node_modules')
   });
 
 module.exports = (env) => {
-
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('styles.css');
   return {
-    externals: nodeModules,
     entry: ["babel-polyfill", './src/index.js'],
     output: {
-      path: path.join(__dirname, "public"),
-      publicPath:'/',
+      path: path.join(__dirname, "public", "dist"),
       filename: 'bundle.js'
     },
     module: {
@@ -50,6 +47,9 @@ module.exports = (env) => {
       }]
     },
     plugins: [CSSExtract],
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       historyApiFallback: true,
