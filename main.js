@@ -2,7 +2,7 @@ const electron = require("electron");
 
 const {app, BrowserWindow} = electron;
 
-let mainWindow = new BrowserWindow({width:1280,height:720,titleBarStyle:"hidden"});
+let mainWindow
 
 console.log(__dirname)
 
