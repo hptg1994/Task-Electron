@@ -2,11 +2,11 @@ const electron = require("electron");
 
 const {app, BrowserWindow} = electron;
 
-let mainWindow;
+let mainWindow = new BrowserWindow({width:1280,height:720,titleBarStyle:"hidden"});
 
 console.log(__dirname)
 
 app.on('ready',() => {
-  mainWindow = new BrowserWindow({});
+  mainWindow = new BrowserWindow({width:1280,height:720,titleBarStyle:"hidden"});
   mainWindow.loadURL(`file://${__dirname}/public/index.html`)
 });
