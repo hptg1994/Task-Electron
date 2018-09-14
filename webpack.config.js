@@ -17,9 +17,11 @@ module.exports = (env) => {
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('styles.css');
   return {
+    externals: nodeModules,
     entry: ["babel-polyfill", './src/index.js'],
     output: {
-      path: path.join(__dirname, "public", "dist"),
+      path: path.join(__dirname, "public"),
+      publicPath:'/',
       filename: 'bundle.js'
     },
     module: {
@@ -52,7 +54,7 @@ module.exports = (env) => {
     devServer: {
       historyApiFallback: true,
       contentBase: path.join(__dirname, 'public'),
-      publicPath: '/dist/',
+      publicPath: '/',
       port: 4172
     }
   }
