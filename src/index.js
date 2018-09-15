@@ -6,10 +6,11 @@ import App from "./components/App";
 
 ReactDOM.render(
   <Router>
-    <Route
+    {/* <Route
       component={() => (
         <App />
-      )}
+      )} */}
+      <App />
     />
   </Router>,
   document.getElementById("root")
