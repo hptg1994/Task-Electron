@@ -1,15 +1,11 @@
-#Task Timer
+# Task Timer
 An Small Electron Applcication that helps you finish the task within the time.
 
 ## Screenshot
-
-![](/Users/hptg/Documents/Projects/Web/Electron/Task-Electron/resources/timer-screenshot.png)
+![timer-screenshot](/resources/timer-screenshot.png)
 
 ## Technical Stack
-
 Electron, React, Moment, Webpack
-
-
 
 ## Usage
 
